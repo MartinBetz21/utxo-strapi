@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_blocks_cards",
+  "info": {
+    "displayName": "card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TextBox1": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "TextBox2": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "TextBox3": {
+      "type": "string",
+      "maxLength": 12
+    },
+    "buttonLink": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.link"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "PRIMARY",
+        "SECONDARY",
+        "TERTIARY"
+      ]
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

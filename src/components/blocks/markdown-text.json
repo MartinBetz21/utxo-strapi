@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_blocks_markdown_texts",
+  "info": {
+    "displayName": "MarkdownText"
+  },
+  "options": {},
+  "attributes": {
+    "paragraph": {
+      "type": "richtext"
+    }
+  }
+}

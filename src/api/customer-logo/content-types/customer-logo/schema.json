@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customer_logos",
+  "info": {
+    "singularName": "customer-logo",
+    "pluralName": "customer-logos",
+    "displayName": "CustomerLogo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

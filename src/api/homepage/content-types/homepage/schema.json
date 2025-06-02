@@ -4,7 +4,8 @@
   "info": {
     "singularName": "homepage",
     "pluralName": "homepages",
-    "displayName": "homepage"
+    "displayName": "homepage",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,33 @@
       "type": "component",
       "repeatable": false,
       "component": "section.hero"
+    },
+    "Services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.services"
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.card-big"
+    },
+    "CaseStudies": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.case-studies"
+    },
+    "WorkingProcessHeader": {
+      "type": "string"
+    },
+    "WorkingProcessSubtext": {
+      "type": "text"
+    },
+    "WorkingProcessSteps": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.card"
+      ]
     }
   }
 }

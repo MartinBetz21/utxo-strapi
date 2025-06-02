@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_customer_logos",
+  "info": {
+    "displayName": "CustomerLogos",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "customer_logos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::customer-logo.customer-logo"
+    }
+  }
+}
