@@ -24,11 +24,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "CustomerLogos": {
-      "type": "component",
-      "repeatable": false,
-      "component": "section.customer-logos"
     }
   }
 }

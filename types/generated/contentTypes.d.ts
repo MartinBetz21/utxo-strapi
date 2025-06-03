@@ -411,38 +411,6 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiCustomerLogoCustomerLogo
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'customer_logos';
-  info: {
-    displayName: 'CustomerLogo';
-    pluralName: 'customer-logos';
-    singularName: 'customer-logo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    href: Schema.Attribute.String;
-    isActive: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::customer-logo.customer-logo'
-    > &
-      Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images', true>;
-    name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   collectionName: 'homepages';
   info: {
@@ -471,6 +439,7 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::homepage.homepage'
     >;
+    Logos: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
     Services: Schema.Attribute.Component<'section.services', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -992,7 +961,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
-      'api::customer-logo.customer-logo': ApiCustomerLogoCustomerLogo;
       'api::homepage.homepage': ApiHomepageHomepage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

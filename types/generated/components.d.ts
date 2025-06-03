@@ -108,12 +108,7 @@ export interface SectionCustomerLogos extends Struct.ComponentSchema {
     description: '';
     displayName: 'CustomerLogos';
   };
-  attributes: {
-    customer_logos: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::customer-logo.customer-logo'
-    >;
-  };
+  attributes: {};
 }
 
 export interface SectionHero extends Struct.ComponentSchema {
@@ -124,7 +119,6 @@ export interface SectionHero extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'blocks.button', false>;
-    CustomerLogos: Schema.Attribute.Component<'section.customer-logos', false>;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     paragraph: Schema.Attribute.Text;

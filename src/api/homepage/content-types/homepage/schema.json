@@ -47,6 +47,14 @@
       "components": [
         "blocks.card"
       ]
+    },
+    "Logos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

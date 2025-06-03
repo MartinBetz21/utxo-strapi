@@ -5,11 +5,5 @@
     "description": ""
   },
   "options": {},
-  "attributes": {
-    "customer_logos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::customer-logo.customer-logo"
-    }
-  }
+  "attributes": {}
 }
