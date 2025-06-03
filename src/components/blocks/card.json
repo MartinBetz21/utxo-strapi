@@ -6,17 +6,8 @@
   },
   "options": {},
   "attributes": {
-    "TextBox1": {
-      "type": "string",
-      "maxLength": 12
-    },
-    "TextBox2": {
-      "type": "string",
-      "maxLength": 12
-    },
-    "TextBox3": {
-      "type": "string",
-      "maxLength": 12
+    "ServiceName": {
+      "type": "string"
     },
     "buttonLink": {
       "type": "component",
@@ -32,11 +23,12 @@
       ]
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

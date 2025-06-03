@@ -21,18 +21,7 @@ export interface BlocksCard extends Struct.ComponentSchema {
   attributes: {
     buttonLink: Schema.Attribute.Component<'blocks.link', false>;
     image: Schema.Attribute.Media<'images'>;
-    TextBox1: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 12;
-      }>;
-    TextBox2: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 12;
-      }>;
-    TextBox3: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 12;
-      }>;
+    ServiceName: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
   };
 }
@@ -128,6 +117,7 @@ export interface SectionHero extends Struct.ComponentSchema {
 export interface SectionServices extends Struct.ComponentSchema {
   collectionName: 'components_section_services';
   info: {
+    description: '';
     displayName: 'Services';
   };
   attributes: {
