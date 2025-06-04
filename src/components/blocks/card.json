@@ -29,6 +29,9 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "Description": {
+      "type": "text"
     }
   }
 }

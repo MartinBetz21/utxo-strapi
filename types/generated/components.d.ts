@@ -20,6 +20,7 @@ export interface BlocksCard extends Struct.ComponentSchema {
   };
   attributes: {
     buttonLink: Schema.Attribute.Component<'blocks.link', false>;
+    Description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     ServiceName: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
