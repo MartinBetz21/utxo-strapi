@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_blog_overviews",
+  "info": {
+    "displayName": "BlogOverview"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "Subtext": {
+      "type": "text"
+    }
+  }
+}

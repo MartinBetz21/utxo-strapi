@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_section_services",
+  "collectionName": "components_section_teams",
   "info": {
-    "displayName": "Services",
-    "description": ""
+    "displayName": "Team"
   },
   "options": {},
   "attributes": {
@@ -12,10 +11,10 @@
     "Subtext": {
       "type": "text"
     },
-    "services": {
+    "team_members": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::service.service"
+      "target": "api::team-member.team-member"
     }
   }
 }

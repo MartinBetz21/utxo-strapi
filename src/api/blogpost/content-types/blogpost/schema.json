@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "case_studies",
+  "collectionName": "blogposts",
   "info": {
-    "singularName": "case-study",
-    "pluralName": "case-studies",
-    "displayName": "CaseStudy",
+    "singularName": "blogpost",
+    "pluralName": "blogposts",
+    "displayName": "Blogpost",
     "description": ""
   },
   "options": {
@@ -32,26 +32,34 @@
         }
       }
     },
-    "media": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+    "PubDate": {
+      "type": "date"
     },
     "slug": {
-      "type": "uid"
+      "type": "uid",
+      "targetField": "Title"
     },
-    "page": {
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "blogposts"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::team-member.team-member",
+      "inversedBy": "blogpost"
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Page": {
       "type": "dynamiczone",
       "components": [
         "blocks.markdown-text",
@@ -60,7 +68,7 @@
       ],
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     }

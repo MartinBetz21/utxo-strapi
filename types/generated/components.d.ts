@@ -62,6 +62,17 @@ export interface BlocksMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionBlogOverview extends Struct.ComponentSchema {
+  collectionName: 'components_section_blog_overviews';
+  info: {
+    displayName: 'BlogOverview';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    Subtext: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionCaseStudies extends Struct.ComponentSchema {
   collectionName: 'components_section_case_studies';
   info: {
@@ -108,8 +119,23 @@ export interface SectionServices extends Struct.ComponentSchema {
   };
   attributes: {
     Heading: Schema.Attribute.String;
-    services: Schema.Attribute.Component<'blocks.card', true>;
+    services: Schema.Attribute.Relation<'oneToMany', 'api::service.service'>;
     Subtext: Schema.Attribute.Text;
+  };
+}
+
+export interface SectionTeam extends Struct.ComponentSchema {
+  collectionName: 'components_section_teams';
+  info: {
+    displayName: 'Team';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    Subtext: Schema.Attribute.Text;
+    team_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
   };
 }
 
@@ -121,10 +147,12 @@ declare module '@strapi/strapi' {
       'blocks.link': BlocksLink;
       'blocks.markdown-text': BlocksMarkdownText;
       'blocks.media': BlocksMedia;
+      'section.blog-overview': SectionBlogOverview;
       'section.case-studies': SectionCaseStudies;
       'section.customer-logos': SectionCustomerLogos;
       'section.hero': SectionHero;
       'section.services': SectionServices;
+      'section.team': SectionTeam;
     }
   }
 }
