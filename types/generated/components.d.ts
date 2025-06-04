@@ -22,23 +22,8 @@ export interface BlocksCard extends Struct.ComponentSchema {
     buttonLink: Schema.Attribute.Component<'blocks.link', false>;
     Description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
-    ServiceName: Schema.Attribute.String;
-    type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
-  };
-}
-
-export interface BlocksCardBig extends Struct.ComponentSchema {
-  collectionName: 'components_blocks_card_bigs';
-  info: {
-    description: '';
-    displayName: 'cardBig';
-  };
-  attributes: {
-    buttonLink: Schema.Attribute.Component<'blocks.link', true>;
-    Heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    Name: Schema.Attribute.String;
     number: Schema.Attribute.Integer;
-    paragraph: Schema.Attribute.Text;
     type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
   };
 }
@@ -133,7 +118,6 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'blocks.button': BlocksButton;
       'blocks.card': BlocksCard;
-      'blocks.card-big': BlocksCardBig;
       'blocks.link': BlocksLink;
       'blocks.markdown-text': BlocksMarkdownText;
       'blocks.media': BlocksMedia;

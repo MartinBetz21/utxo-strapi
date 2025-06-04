@@ -26,11 +26,6 @@
       "repeatable": false,
       "component": "section.services"
     },
-    "CTA": {
-      "type": "component",
-      "repeatable": false,
-      "component": "blocks.card-big"
-    },
     "CaseStudies": {
       "type": "component",
       "repeatable": false,
@@ -55,6 +50,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::team-member.team-member"
     }
   }
 }

@@ -6,7 +6,7 @@
   },
   "options": {},
   "attributes": {
-    "ServiceName": {
+    "Name": {
       "type": "string"
     },
     "buttonLink": {
@@ -32,6 +32,9 @@
     },
     "Description": {
       "type": "text"
+    },
+    "number": {
+      "type": "integer"
     }
   }
 }

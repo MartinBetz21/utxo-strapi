@@ -432,7 +432,6 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    CTA: Schema.Attribute.Component<'blocks.card-big', false>;
     hero: Schema.Attribute.Component<'section.hero', false>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
@@ -442,12 +441,48 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     Logos: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
     Services: Schema.Attribute.Component<'section.services', false>;
+    team_members: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     WorkingProcessHeader: Schema.Attribute.String;
     WorkingProcessSteps: Schema.Attribute.DynamicZone<['blocks.card']>;
     WorkingProcessSubtext: Schema.Attribute.Text;
+  };
+}
+
+export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
+  collectionName: 'team_members';
+  info: {
+    displayName: 'TeamMember';
+    pluralName: 'team-members';
+    singularName: 'team-member';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    Image: Schema.Attribute.Media<'images'>;
+    LinkedIn: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::team-member.team-member'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Role: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -962,6 +997,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::homepage.homepage': ApiHomepageHomepage;
+      'api::team-member.team-member': ApiTeamMemberTeamMember;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
