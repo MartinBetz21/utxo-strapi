@@ -1,11 +1,12 @@
 {
   "collectionName": "components_section_case_studies",
   "info": {
-    "displayName": "CaseStudies"
+    "displayName": "CaseStudies",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "Heading": {
       "type": "string"
     },
     "Subtext": {

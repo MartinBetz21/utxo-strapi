@@ -23,7 +23,6 @@ export interface BlocksCard extends Struct.ComponentSchema {
     Description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     Name: Schema.Attribute.String;
-    number: Schema.Attribute.Integer;
     type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
   };
 }
@@ -65,9 +64,11 @@ export interface BlocksMedia extends Struct.ComponentSchema {
 export interface SectionBlogOverview extends Struct.ComponentSchema {
   collectionName: 'components_section_blog_overviews';
   info: {
+    description: '';
     displayName: 'BlogOverview';
   };
   attributes: {
+    blogposts: Schema.Attribute.Relation<'oneToMany', 'api::blogpost.blogpost'>;
     Heading: Schema.Attribute.String;
     Subtext: Schema.Attribute.Text;
   };
@@ -76,6 +77,7 @@ export interface SectionBlogOverview extends Struct.ComponentSchema {
 export interface SectionCaseStudies extends Struct.ComponentSchema {
   collectionName: 'components_section_case_studies';
   info: {
+    description: '';
     displayName: 'CaseStudies';
   };
   attributes: {
@@ -83,8 +85,8 @@ export interface SectionCaseStudies extends Struct.ComponentSchema {
       'oneToMany',
       'api::case-study.case-study'
     >;
+    Heading: Schema.Attribute.String;
     Subtext: Schema.Attribute.Text;
-    Title: Schema.Attribute.String;
   };
 }
 

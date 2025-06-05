@@ -526,6 +526,10 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
     Logos: Schema.Attribute.Media<'images', true>;
     publishedAt: Schema.Attribute.DateTime;
     Services: Schema.Attribute.Component<'section.services', false>;
+    StudiesAndWhitePaper: Schema.Attribute.Component<
+      'section.studies-and-whitepapers',
+      false
+    >;
     Testimonials: Schema.Attribute.Component<'section.testimonials', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -723,6 +727,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
+    description: '';
     displayName: 'Testimonial';
     pluralName: 'testimonials';
     singularName: 'testimonial';
@@ -743,8 +748,8 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Quote: Schema.Attribute.Text;
     RoleCompany: Schema.Attribute.String;
-    Testimonials: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
