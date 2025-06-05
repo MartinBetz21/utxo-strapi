@@ -581,16 +581,22 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiStudyStudy extends Struct.CollectionTypeSchema {
-  collectionName: 'studies';
+export interface ApiStudyAndWhitepaperStudyAndWhitepaper
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'study_and_whitepapers';
   info: {
     description: '';
-    displayName: 'study';
-    pluralName: 'studies';
-    singularName: 'study';
+    displayName: 'StudyAndWhitepaper';
+    pluralName: 'study-and-whitepapers';
+    singularName: 'study-and-whitepaper';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     BannerImage: Schema.Attribute.Media<'images'>;
@@ -598,17 +604,19 @@ export interface ApiStudyStudy extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Description: Schema.Attribute.Text;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::study.study'> &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::study-and-whitepaper.study-and-whitepaper'
+    >;
     Page: Schema.Attribute.DynamicZone<
-      ['blocks.media', 'blocks.markdown-text', 'blocks.button']
+      ['blocks.media', 'blocks.markdown-text', 'blocks.button', 'blocks.card']
     >;
     PubDate: Schema.Attribute.Date;
-    publication: Schema.Attribute.Media<'files'>;
+    Publication: Schema.Attribute.Media<'files'>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'Name'>;
+    slug: Schema.Attribute.UID<'Title'> & Schema.Attribute.Required;
+    Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1256,7 +1264,7 @@ declare module '@strapi/strapi' {
       'api::case-study.case-study': ApiCaseStudyCaseStudy;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::service.service': ApiServiceService;
-      'api::study.study': ApiStudyStudy;
+      'api::study-and-whitepaper.study-and-whitepaper': ApiStudyAndWhitepaperStudyAndWhitepaper;
       'api::tag.tag': ApiTagTag;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

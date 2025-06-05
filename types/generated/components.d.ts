@@ -124,6 +124,21 @@ export interface SectionServices extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionStudiesAndWhitepapers extends Struct.ComponentSchema {
+  collectionName: 'components_section_studies_and_whitepapers';
+  info: {
+    displayName: 'StudiesAndWhitepapers';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    studies_and_whitepapers: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::study-and-whitepaper.study-and-whitepaper'
+    >;
+    Subtext: Schema.Attribute.Text;
+  };
+}
+
 export interface SectionTeam extends Struct.ComponentSchema {
   collectionName: 'components_section_teams';
   info: {
@@ -167,6 +182,7 @@ declare module '@strapi/strapi' {
       'section.customer-logos': SectionCustomerLogos;
       'section.hero': SectionHero;
       'section.services': SectionServices;
+      'section.studies-and-whitepapers': SectionStudiesAndWhitepapers;
       'section.team': SectionTeam;
       'section.testimonials': SectionTestimonials;
     }

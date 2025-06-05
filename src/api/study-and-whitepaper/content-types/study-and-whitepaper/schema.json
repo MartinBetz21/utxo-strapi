@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "study_and_whitepapers",
+  "info": {
+    "singularName": "study-and-whitepaper",
+    "pluralName": "study-and-whitepapers",
+    "displayName": "StudyAndWhitepaper",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "Title",
+      "required": true
+    },
+    "BannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Page": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.media",
+        "blocks.markdown-text",
+        "blocks.button",
+        "blocks.card"
+      ]
+    },
+    "Publication": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "PubDate": {
+      "type": "date"
+    }
+  }
+}
