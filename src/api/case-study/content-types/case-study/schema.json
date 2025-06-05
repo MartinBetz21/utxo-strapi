@@ -32,15 +32,12 @@
         }
       }
     },
-    "media": {
+    "PDF": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ],
       "pluginOptions": {
         "i18n": {
@@ -63,6 +60,20 @@
           "localized": true
         }
       }
+    },
+    "BannerImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

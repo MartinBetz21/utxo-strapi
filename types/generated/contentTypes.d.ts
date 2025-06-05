@@ -450,6 +450,7 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    BannerImage: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -464,18 +465,16 @@ export interface ApiCaseStudyCaseStudy extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::case-study.case-study'
     >;
-    media: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    Logo: Schema.Attribute.Media<'images'>;
+    page: Schema.Attribute.DynamicZone<
+      ['blocks.markdown-text', 'blocks.media', 'blocks.button']
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    page: Schema.Attribute.DynamicZone<
-      ['blocks.markdown-text', 'blocks.media', 'blocks.button']
-    > &
+    PDF: Schema.Attribute.Media<'files'> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
