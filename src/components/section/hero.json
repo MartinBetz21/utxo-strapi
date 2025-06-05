@@ -24,6 +24,11 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "stats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blocks.stat"
     }
   }
 }

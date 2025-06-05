@@ -62,6 +62,18 @@ export interface BlocksMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksStat extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_stats';
+  info: {
+    description: '';
+    displayName: 'stat';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface SectionBlogOverview extends Struct.ComponentSchema {
   collectionName: 'components_section_blog_overviews';
   info: {
@@ -111,6 +123,7 @@ export interface SectionHero extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images'>;
     paragraph: Schema.Attribute.Text;
+    stats: Schema.Attribute.Component<'blocks.stat', true>;
   };
 }
 
@@ -180,6 +193,7 @@ declare module '@strapi/strapi' {
       'blocks.link': BlocksLink;
       'blocks.markdown-text': BlocksMarkdownText;
       'blocks.media': BlocksMedia;
+      'blocks.stat': BlocksStat;
       'section.blog-overview': SectionBlogOverview;
       'section.case-studies': SectionCaseStudies;
       'section.customer-logos': SectionCustomerLogos;
