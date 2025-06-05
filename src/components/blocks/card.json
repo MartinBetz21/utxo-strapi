@@ -32,6 +32,9 @@
     },
     "Description": {
       "type": "text"
+    },
+    "Number": {
+      "type": "integer"
     }
   }
 }

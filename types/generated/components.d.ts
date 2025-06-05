@@ -23,6 +23,7 @@ export interface BlocksCard extends Struct.ComponentSchema {
     Description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images'>;
     Name: Schema.Attribute.String;
+    Number: Schema.Attribute.Integer;
     type: Schema.Attribute.Enumeration<['PRIMARY', 'SECONDARY', 'TERTIARY']>;
   };
 }
