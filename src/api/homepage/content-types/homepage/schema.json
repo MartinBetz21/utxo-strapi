@@ -19,20 +19,40 @@
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "section.hero"
+      "component": "section.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Services": {
       "type": "component",
       "repeatable": false,
-      "component": "section.services"
+      "component": "section.services",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CaseStudies": {
       "type": "component",
       "repeatable": false,
-      "component": "section.case-studies"
+      "component": "section.case-studies",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "WorkingProcessHeader": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "WorkingProcessSubtext": {
       "type": "text"
@@ -41,7 +61,12 @@
       "type": "dynamiczone",
       "components": [
         "blocks.card"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Logos": {
       "type": "media",
@@ -54,22 +79,42 @@
     "BlogOverview": {
       "type": "component",
       "repeatable": false,
-      "component": "section.blog-overview"
+      "component": "section.blog-overview",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CTA": {
       "type": "component",
       "repeatable": false,
-      "component": "blocks.card"
+      "component": "blocks.card",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Testimonials": {
       "type": "component",
       "repeatable": false,
-      "component": "section.testimonials"
+      "component": "section.testimonials",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "StudiesAndWhitePaper": {
       "type": "component",
       "repeatable": false,
-      "component": "section.studies-and-whitepapers"
+      "component": "section.studies-and-whitepapers",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
