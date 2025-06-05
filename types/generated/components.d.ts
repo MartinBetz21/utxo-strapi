@@ -139,6 +139,21 @@ export interface SectionTeam extends Struct.ComponentSchema {
   };
 }
 
+export interface SectionTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_section_testimonials';
+  info: {
+    displayName: 'Testimonials';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    Subtext: Schema.Attribute.Text;
+    testimonials: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    >;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -153,6 +168,7 @@ declare module '@strapi/strapi' {
       'section.hero': SectionHero;
       'section.services': SectionServices;
       'section.team': SectionTeam;
+      'section.testimonials': SectionTestimonials;
     }
   }
 }

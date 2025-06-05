@@ -55,6 +55,16 @@
       "type": "component",
       "repeatable": false,
       "component": "section.blog-overview"
+    },
+    "CTA": {
+      "type": "component",
+      "repeatable": false,
+      "component": "blocks.card"
+    },
+    "Testimonials": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.testimonials"
     }
   }
 }
